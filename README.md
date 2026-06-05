@@ -1,16 +1,33 @@
-# React + Vite
+# API => PERSONAJES DE BLEACH
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto de Personajes de Bleach. Es una aplicación web construida con React y Vite que se conecta a una API externa para listar, buscar y paginar los personajes del anime Bleach, permitiendo además guardar favoritos. Cuenta con paginado.
 
-Currently, two official plugins are available:
+# CARACTERISTICAS:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Cuenta con la API de Jikan (MyAnimeList)
+Filtramos por nombre y por rol, utilizando metodos como .trim() para evitar los espacios vacios.  
+.some() para poder interactuar en Favoritos
+.toLowerCase para llevar todo a minusculas
+Math.ceil() para redondear numeros (especial en personajes)
+.map() para renderizar una lista de elementos
 
-## React Compiler
+Contamos con un control de errores y de cargado ("Cargando el Gotei 13...)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+# ESTRUCTURA:
+App.jsx - Principal, conectamos la API y verificamos errores. (Cuerpo).
+App.css - Decoración para que se vea ultra mega piola.
 
-## Expanding the ESLint configuration
+Componentes:
+CharacterCard.jsx - Renderizar tarjeta de personaje.
+Paginado.jsx - Botones inferiores. Hacer paginas de 15 personajes c/u.
+Buscador.jsx - Componente Input de busqueda.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# TECNOLOGÍAS UTILIZADAS:
+
+React (Hooks: useState, useEffect)
+-
+Vite (como empaquetador/servidor de desarrollo)
+-
+CSS Grid y Flexbox (para el diseño limpio y el centrado del buscador)
+-
+API: Jikan API (v4)

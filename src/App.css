@@ -1,101 +1,157 @@
-ul {
-  list-style: none;
-  padding: 0;
+.container {
+  font-family: "Arial, sans-serif";
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 1000px;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  outline-style: dashed;
+  outline-color: cadetblue;
+
+
+  box-shadow: 0 0 10px 10px #2195f3bd;
+}
+
+.todo-container{
+  display: flex;
+  justify-self: center;
+}
+
+.titulo {
+  border-left: 5px solid #2196f3;
+  padding-left: 12px;
+  border-right: 5px solid #2196f3;
+  text-align: center;
+  color:rgb(245, 98, 0) !important;
+  margin-bottom: 30px;
+}
+
+.todo-input {
+  padding: 15px;
+  width: 100%;
+  max-width: 600px; /* Evita que se deforme al escribir */
+  font-size: 16px;
+  border-radius: 12px;
+  outline-style: inset;
+  outline-color: darkorange;
+
+
+  border-style: inset;
+
+  border: 2px solid #f33a21;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.character-grid {
+  display: grid;
+  /* Cambié el mínimo a 300px porque las tarjetas horizontales necesitan más ancho */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+  gap: 25px;
+}
+
+.card {
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  gap: 15px;
+}
+
+.input{
+  justify-content: center;
+  justify-self: center;
+}
+
+.card-image {
+  width: 80px;       
+  height: 110px;    
+  object-fit: contain;
+  border-radius: 8px;
+  background-color: #fafafa;
+  flex-shrink: 0;      /* Le prohíbe a Flexbox achicar la imagen */
+}
+
+
+.card-text {
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  justify-content: center;
+  flex: 1;            /* Ocupa todo el espacio restante de la tarjeta */
 }
 
+.card-title { 
+  font-size: 16px; 
+  margin: 0 0 5px 0; 
+  font-weight: bold; 
+}
 
+.card-role { 
+  color: #666; 
+  font-size: 14px; 
+  margin-bottom: 12px; 
+}
 
-
-.decoList {
-  background-color: white;
-  color: cornflowerblue;
+.fav-section {
+  background-color: #e3f2fd; 
   padding: 20px;
-  margin: 10px;
-  border: 2px solid #87CEEB; 
-  outline-style:double;
-  outline-color: rgb(100, 100, 228);
-  border-radius: 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  border: 1px solid #bbdefb;
+  outline-style: dashed;
+  outline-color: cadetblue;
+}
+
+.btn {
+  border: none; 
+  padding: 8px 12px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  font-size: 13px; 
+  font-weight: bold;
+  align-self: flex-start; /* Hace que el botón ocupe solo su propio texto */
+  width: auto;
+}
+
+
+.pagination-container {
   display: flex;
+  justify-content: center;
   gap: 10px;
-  justify-content: space-between; 
-  align-items: center;
-  margin-bottom: 10px;
-  max-width: 300px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
 }
 
-.decoList span {
+
+.page-btn {
+  padding: 8px 14px;
+  border: 2px solid #2196f3;
+  background-color: #ffffff;
+  color: #2196f3;
+  border-radius: 8px;
   cursor: pointer;
-}
-
-.main-container {
-  background-color: rgba(255, 255, 255, 0.7); 
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(7, 5, 145, 0.274);
-  width: 100%;
-  max-width: 500px;
-  text-align: center; 
-  border-color: #008B8B;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  margin: 5px;
   outline-style: double;
-  outline-color: #008B8B;
+  outline-color: darkblue;
 }
 
 
-.inputGroup{
-  justify-content: space-between;
-  
+.page-btn:hover {
+  background-color: #e3f2fd;
 }
 
 
-.btn-eliminar {
-
-  border: 2px solid #87CEEB; 
-  background-color: #E0F7FA;
-  color: #008B8B; 
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-
-}
-
-.btn-eliminar:hover {
-  background-color: #B2EBF2; 
-}
-
-
-
-.children {
-  color: #008B8B; /* Un verde azulado para que resalte de lo palido que esta esto */
-  margin-bottom: 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  letter-spacing: 1px;
-}
-
-
-.btn-agregar {
-  background-color: #00BFFF; 
-  color: white;
-  border-color: #008B8B;
-  outline-style: double;
-  outline-color: #008B8B;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 50px;
-
-}
-
-.btn-agregar:hover {
-  background-color: #0099cc;
-}
-
-.busqueda{
-  background-color: #87CEEB;
-  border-color: #008B8B;
-  outline-style:double;
-  outline-color: #008B8B;
-  border-radius: 10px;
+.page-btn.active {
+  background-color: #2196f3; 
+  color: #ffffff;
+  border-color: #2196f3;
+  box-shadow: 0 0 8px rgba(33, 150, 243, 0.4); 
 }
